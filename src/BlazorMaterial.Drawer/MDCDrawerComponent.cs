@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Blazor;
-using Microsoft.AspNetCore.Blazor.Browser.Interop;
 using Microsoft.AspNetCore.Blazor.Components;
+using Microsoft.JSInterop;
 
 namespace BlazorMaterial
 {
@@ -31,7 +31,7 @@ namespace BlazorMaterial
             this.ClassString = _classNameBuilder.Build(this, this.Class);
         }
 
-        protected override void OnAfterRender()
+        protected override async void OnAfterRender()
         {
             if (this._isFirstRender)
             {
@@ -40,7 +40,7 @@ namespace BlazorMaterial
                 if (this.Type != MDCDrawerType.Permanent)
                 {
                     var persistent = this.Type == MDCDrawerType.Persistent;
-                    RegisteredFunction.Invoke<bool>(ATTACH_FUNCTION, this._MDCDrawer, persistent);
+                    await JSRuntime.Current.InvokeAsync<bool>(ATTACH_FUNCTION, this._MDCDrawer, persistent);
                 }
             }
         }
