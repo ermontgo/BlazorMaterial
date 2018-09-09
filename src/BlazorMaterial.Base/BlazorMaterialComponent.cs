@@ -6,5 +6,8 @@ namespace BlazorMaterial
     {
         [Parameter]
         protected string Class { get; set; }
+
+        [Parameter]
+        protected int? Elevation { get; set; }
     }
 }
