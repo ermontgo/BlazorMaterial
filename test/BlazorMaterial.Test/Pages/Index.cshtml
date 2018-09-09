@@ -15,6 +15,10 @@
         <MDCListItemGraphic Type=@MDCListItemGraphicType.Image Graphic="/images/ic_side_navigation_24px.svg" />
         <MDCListItemContent PrimaryText="Drawer" SecondaryText="Various drawer styles" />
     </MDCListItem>
+    <MDCListItem OnClick="@{ _ => UriHelper.NavigateTo("/cards")}">
+        <MDCListItemGraphic Type=@MDCListItemGraphicType.Image Graphic="/images/ic_side_navigation_24px.svg" />
+        <MDCListItemContent PrimaryText="Cards" SecondaryText="Card examples" />
+    </MDCListItem>
 </MDCList>
 
 @functions{
