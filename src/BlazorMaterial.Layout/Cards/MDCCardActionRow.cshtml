@@ -1,0 +1,24 @@
+@inherits BlazorMaterialComponent
+
+<div class="@GetClassString()">
+    @ChildContent
+</div>
+
+@functions {
+    [Parameter]
+    bool FullBleed { get; set; }
+
+    [Parameter]
+    RenderFragment ChildContent { get; set; }
+
+    string GetClassString()
+    {
+        string baseClass = "mdc-card__actions";
+        if (FullBleed)
+        {
+            baseClass += " mdc-card__actions--full-bleed";
+        }
+
+        return baseClass;
+    }
+}

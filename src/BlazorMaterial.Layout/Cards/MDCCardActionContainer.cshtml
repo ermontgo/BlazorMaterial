@@ -1,0 +1,18 @@
+@inherits BlazorMaterialComponent
+
+<div class="mdc-card__action-@GetActionTypeClass()">
+    @ChildContent
+</div>
+
+@functions {
+    [Parameter]
+    MDCCardActionType ActionType { get; set; }
+
+    [Parameter]
+    RenderFragment ChildContent { get; set; }
+
+    string GetActionTypeClass()
+    {
+        return ActionType == MDCCardActionType.Icon ? "icons" : "buttons";
+    }
+}

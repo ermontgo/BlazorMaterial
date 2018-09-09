@@ -17,7 +17,7 @@ namespace BlazorMaterial
         private readonly string _classNamePrefix = string.Empty;
         private readonly IList<(string Name, Func<T, string> ValueAccessor, Func<T, bool> Predicate, string PrefixSeparator)> classDefinitions = new List<(string, Func<T, string>, Func<T, bool>, string)>();
 
-        public ClassBuilder(string componentLibraryPrefix = default, string componentPrefix = default)
+        public ClassBuilder(string componentLibraryPrefix = default, string componentPrefix = default, string elementPrefix = default)
         {
             this._classNamePrefix = componentLibraryPrefix;
 
@@ -26,6 +26,12 @@ namespace BlazorMaterial
                 if (!string.IsNullOrWhiteSpace(this._classNamePrefix))
                 {
                     this._classNamePrefix += $"{DashSeparator}{componentPrefix}";
+
+                    // We only want to allow a element prefix if we have a component
+                    if (!string.IsNullOrWhiteSpace(elementPrefix))
+                    {
+                        this._classNamePrefix += $"{ElementSeparator}{elementPrefix}";
+                    }
                 }
                 else
                 {

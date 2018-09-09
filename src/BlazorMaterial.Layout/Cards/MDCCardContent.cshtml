@@ -1,0 +1,10 @@
+@inherits BlazorMaterialComponent
+
+<div class="mdc-card__content">
+    @ChildContent
+</div>
+
+@functions {
+[Parameter]
+RenderFragment ChildContent { get; set; }
+}
