@@ -1,0 +1,18 @@
+@page "/cards"
+@inject AppState AppState
+@using BlazorMaterial.Layout.Cards
+
+<div class="hero">
+    <MDCCard>
+        <MDCCardActionRow>
+            <MDCCardActionContainer ActionType=@MDCCardActionType.Button>
+                <MDCCardAction ActionType=@MDCCardActionType.Button>Add</MDCCardAction>
+                <MDCCardAction ActionType=@MDCCardActionType.Button>Refresh</MDCCardAction>
+            </MDCCardActionContainer>
+        </MDCCardActionRow>
+        <MDCCardContent>
+            <h4>Content</h4>
+            <p>Here is a short amount of code to show content showing up</p>
+        </MDCCardContent>
+    </MDCCard>
+</div>

@@ -1,0 +1,19 @@
+@page "/"
+@inject AppState AppState
+@inject Microsoft.AspNetCore.Blazor.Services.IUriHelper UriHelper
+
+<MDCList TwoLine="true">
+
+    <MDCListItem OnClick="@{ _ => UriHelper.NavigateTo("/cards")}">
+        <MDCListItemGraphic Type=@MDCListItemGraphicType.Image Graphic="/images/ic_side_navigation_24px.svg" />
+        <MDCListItemContent PrimaryText="Cards" SecondaryText="Card examples" />
+    </MDCListItem>
+</MDCList>
+
+@functions{
+    protected override void OnInit()
+    {
+        AppState.Title = "Material Components Catalog";
+        AppState.ToolbarIcon = "/images/ic_component_24px_white.svg";
+    }
+}
