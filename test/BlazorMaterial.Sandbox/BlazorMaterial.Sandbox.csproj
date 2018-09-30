@@ -21,6 +21,7 @@
     <ProjectReference Include="..\..\src\BlazorMaterial.Base\BlazorMaterial.Base.csproj" />
     <ProjectReference Include="..\..\src\BlazorMaterial.Button\BlazorMaterial.Button.csproj" />
     <ProjectReference Include="..\..\src\BlazorMaterial.Drawer\BlazorMaterial.Drawer.csproj" />
+    <ProjectReference Include="..\..\src\BlazorMaterial.Input\BlazorMaterial.Input.csproj" />
     <ProjectReference Include="..\..\src\BlazorMaterial.Layout\BlazorMaterial.Layout.csproj" />
     <ProjectReference Include="..\..\src\BlazorMaterial.Lists\BlazorMaterial.Lists.csproj" />
     <ProjectReference Include="..\..\src\BlazorMaterial.Ripple\BlazorMaterial.Ripple.csproj" />

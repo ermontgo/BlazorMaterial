@@ -8,6 +8,10 @@
         <MDCListItemGraphic Type=@MDCListItemGraphicType.Image Graphic="/images/ic_side_navigation_24px.svg" />
         <MDCListItemContent PrimaryText="Cards" SecondaryText="Card examples" />
     </MDCListItem>
+    <MDCListItem OnClick="@{ _ => UriHelper.NavigateTo("/input")}">
+        <MDCListItemGraphic Type=@MDCListItemGraphicType.Image Graphic="/images/ic_side_navigation_24px.svg" />
+        <MDCListItemContent PrimaryText="Input" SecondaryText="Input examples" />
+    </MDCListItem>
 </MDCList>
 
 @functions{

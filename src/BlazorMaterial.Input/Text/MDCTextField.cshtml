@@ -1,0 +1,11 @@
+@inherits MDCTextFieldComponent
+
+<div ref="_MDCTextField" class=@ClassString >
+    <input type="text" id="textbox" class="mdc-text-field__input"
+           aria-controls=@GetHelperAttributes() aria-describedby="@GetHelperAttributes()"
+           value="@Value" onchange="@(e => HandleValueChange(e))"/>
+    <label for="textbox" class="mdc-floating-label">@Label</label>
+    @if (!string.IsNullOrEmpty(HelperText)) {
+        <p id=@GetHelperAttributes() class="mdc-text-field-helper-text" aria-hidden="true">@HelperText</p>
+    }
+</div>

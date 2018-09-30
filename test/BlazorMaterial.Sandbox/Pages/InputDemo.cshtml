@@ -1,0 +1,35 @@
+@page "/input"
+@inject AppState AppState
+@inject Microsoft.AspNetCore.Blazor.Services.IUriHelper UriHelper
+
+<p class="mdc-typography--headline3">Text Fields</p>
+
+<MDCTextField Label="First Name" bind-Value="@FirstName" IdPrefix="first-name" />
+<p>@FirstName</p>
+
+<MDCTextField Label="Last Name" Value="@LastName" ValueChanged=@(this.LastNameChanged) IdPrefix="last-name" />
+<p>@LastName</p>
+
+<MDCButton OnClick=@((_) => this.StateHasChanged())>
+    Refresh
+</MDCButton>
+
+@functions{
+    protected override void OnInit()
+    {
+        AppState.Title = "Input Fields";
+        AppState.ToolbarIcon = "/images/ic_component_24px_white.svg";
+    }
+
+    [Parameter]
+    protected string FirstName { get; set; }
+
+    [Parameter]
+    protected string LastName { get; set; }
+
+    protected void LastNameChanged(string value)
+    {
+        LastName = value;
+        this.StateHasChanged();
+    }
+}
